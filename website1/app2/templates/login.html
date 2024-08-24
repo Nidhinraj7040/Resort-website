@@ -1,0 +1,33 @@
+{% extends 'master.html' %}
+{% load static %}
+
+{% block title %}
+Sign Up
+{% endblock %}
+
+{% block content %}
+
+
+<section>
+    <div class="container mt-3">
+      <div class="row">
+        <div class="col-sm-6 mx-auto ">
+          <div class="inbox login ">  
+        <form action="/login" method="post">
+            <h2 class="text-center">LOGIN</h2>
+          {% csrf_token %}
+          <div class="mb-3 mt-3">
+            <label for="username">username:</label>
+            <input type="text" class="form-control" id="name" placeholder="Enter username" name="log_username">
+          </div>
+          <div class="mb-3">
+            <label for="pwd">Password:</label>
+            <input type="password" class="form-control" id="pwd" placeholder="Enter password" name="log_password">
+          </div>
+          <button type="submit" class="btn btn-primary">Submit</button>
+
+        </form>
+      </div>
+    </div>
+
+{% endblock %}

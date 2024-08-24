@@ -1,0 +1,195 @@
+{% extends 'master.html' %}
+{% load static %}
+
+{% block title %}
+Home Page
+{% endblock %}
+
+{% block content %}
+
+<style>
+    html,
+    body {
+      position: relative;
+      height: 100%;
+    }
+
+    body {
+      background: #eee;
+      color: #000;
+      margin: 0;
+      padding: 0;
+    }
+
+    swiper-container {
+      width: 100%;
+      height: 600px;
+    }
+
+    swiper-slide {
+      text-align: center;
+      font-size: 18px;
+      background: #fff;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    swiper-slide img {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .autoplay-progress {
+      position: absolute;
+      right: 16px;
+      bottom: 16px;
+      z-index: 10;
+      width: 48px;
+      height: 48px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: bold;
+      color: var(--swiper-theme-color);
+    }
+    .spend img{
+      width: 50%;
+      margin: 20px;
+    }
+    .autoplay-progress svg {
+      --progress: 0;
+      position: absolute;
+      left: 0;
+      top: 0px;
+      z-index: 10;
+      width: 100%;
+      height: 100%;
+      stroke-width: 4px;
+      stroke: var(--swiper-theme-color);
+      fill: none;
+      stroke-dashoffset: calc(125.6px * (1 - var(--progress)));
+      stroke-dasharray: 125.6;
+      transform: rotate(-90deg);
+    }
+    @media (max-width: 1200px) { /* Extra Large Screens (xl) */
+      swiper-container {
+        height: 500px; /* Adjusted height for xl screens */
+      }
+
+      .inbox {
+        padding: 3rem;
+      }
+
+      .secondcol img {
+        height: auto; /* Adjust image height for xl screens */
+      }
+    }
+
+    @media (max-width: 992px) { /* Large Screens (lg) */
+      swiper-container {
+        height: 400px; /* Adjusted height for lg screens */
+      }
+      .spend img{
+      width: 100%;
+    }
+      .inbox {
+        padding: 2rem;
+      }
+
+      .secondcol img {
+        width: 100%;
+        height: auto; /* Adjust image dimensions for lg screens */
+      }
+    }
+
+    @media (max-width: 576px) { /* Small Screens (sm) */
+      swiper-container {
+        height: 300px; /* Adjusted height for sm screens */
+      }
+      .spend img{
+      width: 100%;
+    }
+      .inbox {
+        padding: 1rem;
+      }
+
+      .secondcol img {
+        width: 100%;
+        height: auto; /* Ensure image adjusts properly on sm screens */
+      }
+
+      .spend {
+        font-size: 16px; 
+        margin: 0px;/* Adjust font size for better readability on sm screens */
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <!-- Swiper -->
+  <swiper-container class="mySwiper" pagination="true" pagination-clickable="true" navigation="true" space-between="30"
+    centered-slides="true" autoplay-delay="2500" autoplay-disable-on-interaction="false">
+    <swiper-slide><img src="{% static 'rst2.jpg' %} " alt=""></swiper-slide>
+    <swiper-slide><img src="{% static 'rst7.jpg' %} " alt=""></swiper-slide>
+    <swiper-slide><img src="{% static 'rst8.jpg' %} " alt=""></swiper-slide>
+    <swiper-slide><img src="{% static 'rst5.jpg' %} " alt=""></swiper-slide>
+   
+    <div class="autoplay-progress" slot="container-end">
+      <svg viewBox="0 0 48 48">
+        <circle cx="24" cy="24" r="20"></circle>
+      </svg>
+      <span></span>
+    </div>
+  </swiper-container>
+
+  <!-- Swiper JS -->
+  
+
+  <!-- Initialize Swiper -->
+  <script>
+    const progressCircle = document.querySelector(".autoplay-progress svg");
+    const progressContent = document.querySelector(".autoplay-progress span");
+
+    const swiperEl = document.querySelector("swiper-container");
+    swiperEl.addEventListener("autoplaytimeleft", (e) => {
+      const [swiper, time, progress] = e.detail;
+      progressCircle.style.setProperty("--progress", 1 - progress);
+      progressContent.textContent = `${Math.ceil(time / 1000)}s`;
+    });
+
+          
+
+
+    
+  </script>
+ 
+
+  <section>
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-12">
+          <div class="inbox p-5 ">
+            <h2 class="spend" >
+              <img src="{% static 'couple.jpg' %}" alt=""  style="float: right;">
+              Spend your vacation in comfort at one of our many establishments. We aim to deliver the best services around the world.Luxury goods are more valuable in addition to being more attractive due to their rarity. This exclusivity factor is a key driver in the luxury market, where the limited availability of products adds to their allure and prestige.</h2>
+            
+          </div>
+        </div>
+        <!-- <div class="col-sm-6">
+          <div class="inbox  secondcol p-5">
+         
+        </div>
+        </div> -->
+      </div>
+    </div>
+  </section>
+
+
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-element-bundle.min.js"></script>
+
+{% endblock %}
+

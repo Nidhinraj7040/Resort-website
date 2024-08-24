@@ -1,0 +1,67 @@
+{% extends 'master.html' %}
+{% load static %}
+
+{% block title %}
+View Booking
+{% endblock %}
+
+{% block content %}
+
+<section>
+    <div class="container">
+        <div class="row">
+            <h1>View Booking</h1>
+            {% for x in rooms %}
+            <div class="col-sm-3">
+                <img src="/media/{{x.room_image}}" width="100%"  alt="">
+                <h5>resort name : {{x.room_name}}</h5>
+                <h6> room price : {{x.room_price}}</h6>
+                <h6>room number: {{x.room_number}}</h6>
+                <h6>room status: {{x.room_status}}</h6>
+                <h6>room capacity: {{x.room_capacity}}</h6>
+                <h6>room type: {{x.room_type}}</h6>
+                <!-- <h6>room description: {{x.room_description}}</h6> -->
+               <a href="/checkout/{{x.id}}"><button class="btn btn-primary" type="submit">Book Room</button></a> 
+            </div>
+            {% endfor %}
+        </div>
+
+
+    </div>
+</section>
+<!-- 
+<table width="100%" border="1" cellspacing="0" cellpadding="20">
+    <thead>
+        <th>sl no</th>
+        <th>resort name</th>
+        <th>room name</th>
+        <th>room image</th>
+        <th>room price</th>
+        <th>room number</th>
+        <th>room status</th>
+        <th>room capacity</th>
+        <th>room type</th>
+        <th>room description</th>
+    </thead>
+    <tbody>
+        {% for x in addroom %}
+        <tr>
+            <td>{{forloop.counter}}</td>
+            <td>{{x.resort_name}}</td>
+            <td>{{x.room_name}}</td>
+            <td><img src="/media/{{x.room_image}}" alt="" width="100%"></td>
+            <td>{{x.room_price}}</td>
+            <td>{{x.room_number}}</td>
+            <td>{{x.room_status}}</td>
+            <td>{{x.room_capacity}}</td>
+            <td>{{x.room_type}}</td>
+            <td>{{x.room_description}}</td>
+           
+        </tr>
+        {% endfor %}
+    </tbody>
+
+</table>
+
+
+{% endblock %} -->

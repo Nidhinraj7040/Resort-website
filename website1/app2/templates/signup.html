@@ -1,0 +1,53 @@
+{% extends 'master.html' %}
+{% load static %}
+
+{% block title %}
+Sign Up
+{% endblock %}
+
+{% block content %}
+<section class="background">
+<div class="container mt-3">
+  <div class="row ">
+    <div class="col-sm-6 mx-auto">
+      <div class="inbox signup">
+    
+    <h2 class="text-center">Signup Here!</h2>
+    <form action="/signup" method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        <div class="mb-3 mt-3">
+            <label for="name">Name:</label>
+            <input type="name" class="form-control" id="name" placeholder="Enter name " name="reg_name">
+          </div>
+
+      <div class="mb-3 mt-3">
+        <label for="email">Email:</label>
+        <input type="email" class="form-control" id="email" placeholder="Enter email" name="reg_email">
+      </div>
+
+      <div class="mb-3 mt-3">
+        <label for="username">Username:</label>
+        <input type="text" class="form-control" id="username" placeholder="Enter username" name="reg_username">
+      </div>
+
+      <div class="mb-3">
+        <label for="pswd">Password:</label>
+        <input type="password" class="form-control" id="pswd" placeholder="Enter password" name="reg_password">
+      </div>
+
+      <!-- <div class="mb-3">
+        <label for="phone">Phonenumber:</label>
+        <input type="phonenumber" class="form-control" id="phone" placeholder="Enter phonenumber" name="reg_phonenumber">
+      </div> -->
+      
+      <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+  </div>
+</div>
+
+
+</div>
+</div>
+</section>
+  
+{% endblock %}

@@ -1,0 +1,62 @@
+{% extends 'master.html' %}
+{% load static %}
+
+{% block title %}
+Home Page
+{% endblock %}
+
+{% block content %}
+<section>
+    <div class="container">
+
+        <div class="row">
+            <h2 class="bookhead">PREMIUM DESTINATION PROPERTIES</h2>
+            {% for x in bookresort1 %}
+            
+            <div class="col-xl-4 col-lg-4 col-md-6 col-sm-12">
+                <div class="inbox rooms ">
+                    <img src="/media/{{x.resort_image}}" alt="" width="100%">
+                    <div class="w-50 mx-auto">
+                        <h4 class="skies">{{x.brand_name}}</h4>
+                        <h4 class="brndname">{{x.resort_name}}</h4>
+                        <h4 class="dist">{{x.resort_place}}</h4>
+                    </div>
+                    <h4 class="resorttype"> {{x.resort_type}}</h4>
+                    <div class="bookonline "><a href="/viewbooking/{{x.id}}" class="bookonline">BOOK ONLINE</a></div>
+                </div>
+            </div>
+            {% endfor %}
+
+        </div>
+    </div>
+
+
+        <div class="container">
+            <div class="row">
+                <h2 class="bookhead">BUDGET DESTINATION PROPERTIES</h2>
+                {% for x in bookresort2 %}
+            
+                    <div class="col-xl-4 col-lg-4 col-md-6 col-sm-12">
+                        <div class="inbox rooms ">
+                            <img src="/media/{{x.resort_image}}" alt="" width="100%" title="HAI good morning">
+                            <div class="w-50 mx-auto">
+                                <h4 class="skies">{{x.brand_name}}</h4>
+                                <h4 class="brndname">{{x.resort_name}}</h4>
+                                <h4 class="dist">{{x.resort_place}}</h4>
+                            </div>
+                            <!-- <h4 class="type"> PREMIUM BEACH RESORT</h4> -->
+                            <div class="bookonline "><a href="/viewbooking {{x.id}}" class="bookonline">BOOK ONLINE</a></div>
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+    
+</section>
+{% endblock %}
+
+               
+
+
+
+

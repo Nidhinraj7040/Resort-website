@@ -1,0 +1,94 @@
+{% extends 'dashboard/dashboardmaster.html' %}
+{% load static %}
+
+{% block title %}
+add rooms
+{% endblock %}
+
+{% block content %}
+
+<section>
+    <form action="/addrooms" method="POST" enctype="multipart/form-data">
+        {% csrf_token %}
+        <div class="container">
+            <div class="row">
+                <h2>Add rooms</h2>
+            </div>
+
+            <div class="row">
+                <div class="col-md-6">
+                    <label for="name" class="form-label">resort name</label>
+                    <select name="resort_name" id="">
+                        {% for x in resort %}
+                        <option value="{{x.id}}">{{x.resort_name}}</option>
+                        {% endfor %}
+                    </select>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6">
+                    <label for="name" class="form-label">room name</label>
+                    <select name="roomname" id="name">
+                       
+                        <option value="premium">premium</option>
+                        <option value="budget oriented">budget oriented</option>
+                    </select>
+                </div>
+            </div>
+            <div class="row">
+                <div class="mb-3 mt-3">
+                    <label for="file" class="form-label">room image</label>
+                    <input type="file" class="form-control" id="image" placeholder="room image" name="room_image">
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-6">
+                    <label for="name" class="form-label">price</label>
+                    <input type="number" class="form-control" id="name" placeholder="price" name="room_price">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6">
+                    <label for="name" class="form-label">room number</label>
+                    <input type="number" class="form-control" id="name" placeholder="room number" name="room_number">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6">
+                    <label for="name" class="form-label">room status</label>
+                    <input type="text" class="form-control" id="name" placeholder="room status" name="room_status">
+                </div>
+            </div>
+
+
+            <div class="row">
+                <div class="col-md-6">
+                    <label for="name" class="form-label">capacity</label>
+                    <input type="number"  class="form-control" id="name" placeholder="capacity" name="room_capacity">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6">
+                    <label for="name" class="form-label">room type</label>
+                   <select name="room" id="room">
+                    <option value="AC Rooms">AC Rooms</option>
+                    <option value="Non AC Rooms">Non AC Rooms</option>
+                   </select>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6">
+                    <label for="name" class="form-label">description</label>
+                    <input type="text" class="form-control" id="name" placeholder="description" name="room_description">
+                </div>
+            </div>
+
+
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </div>
+    </form>
+    </div>
+</section>
+
+{% endblock %}

@@ -1,0 +1,26 @@
+{% extends 'master.html' %}
+{% load static %}
+
+{% block title %}
+Home Page
+{% endblock %}
+
+{% block content %}
+<div class="container text-center">
+    {% if 'cancelmsg' in request.session %}
+    <h1 class="text-danger">Booking cancelled</h1>
+    <a href="/bookresorts">
+        <button class="btn btn-dark">book your resort</button></a>
+    {% else %}
+    <h1 class="text-success display-2">Booking Successful</h1>  
+    <div class="tex -center mt-4">
+        
+        <a href="/bookconfirmation?cancel">
+            <button class="btn btn-dark">cancel booking</button>
+        </a>
+    </div>
+    {% endif %}
+</div>
+
+
+{% endblock %}

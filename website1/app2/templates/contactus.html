@@ -1,0 +1,144 @@
+{% extends 'master.html' %}
+{% load static %}
+
+{% block title %}
+contact page
+{% endblock %}
+
+{% block content %}
+<section>
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                <div class="contactimg">
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="row">
+        <div class="col-xl-6 col-lg-6 col-md-12 p-3">
+          <div class="inbox contactlist">
+        <form action="/contactus" method="post" enctype="multipart/form-data">
+           {% csrf_token %}
+    
+            <div class="mb-3 mt-3" style="padding-bottom: 15px;">
+                <label for="name">Name:</label>
+                <input type="name" class="form-control" id="name" placeholder="Enter name " name="contact_name">
+              </div>
+    
+          <div class="mb-3 mt-3" style="padding-bottom: 15px;">
+            <label for="email">Email:</label>
+            <input type="email" class="form-control" id="email" placeholder="Enter email" name="contact_email">
+          </div>
+          <div class="mb-3 mt-3" style="padding-bottom: 15px;">
+            <label for="msg">Message:</label>
+            <textarea class="form-control" id="msg" placeholder="Enter message" name="contact_msg"></textarea>
+          </div>
+          
+          <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+      </div>
+    </div>
+
+    <div class="col-xl-6 col-lg-6 col-md-12">
+      <div class="row">
+        <div class="col p-5">
+          <div class="inbox visitus">
+            <img src ="{% static 'visit.png' %}" alt="" height="150px" width="">
+            <h4>Adress : g square jam towers palakkad</h4>
+            <h4>phone : +917654673254</h4>
+            <h4>email : skiesresorts@gmail.com</h4>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+  
+    </div>
+    </div>
+
+</section>
+
+<style>
+  .contactimg {
+    /* Optional: Add styles for the contact image section */
+  }
+
+  .contactlist, .visitus {
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 0.25rem;
+    padding: 1rem;
+  }
+
+  .form-control {
+    border-radius: 0.25rem;
+  }
+
+  .btn-primary {
+    background-color: #007bff;
+    border: none;
+    color: #fff;
+    padding: 0.5rem 1rem;
+    border-radius: 0.25rem;
+  }
+
+  .btn-primary:hover {
+    background-color: #0056b3;
+  }
+
+  @media (max-width: 1200px) { /* Extra Large Screens (xl) */
+    .contactimg img {
+      max-width: 100%;
+      height: auto;
+    }
+
+    .contactlist, .visitus {
+      padding: 1.5rem;
+    }
+
+    .btn-primary {
+      padding: 0.75rem 1.5rem;
+    }
+  }
+
+  @media (max-width: 992px) { /* Large Screens (lg) */
+    .contactimg {
+      /* Optional: Adjust styles for large screens */
+    }
+
+    .contactlist, .visitus {
+      padding: 1rem;
+    }
+
+    .btn-primary {
+      padding: 0.5rem 1rem;
+    }
+  }
+
+  @media (max-width: 576px) { /* Small Screens (sm) */
+    .contactimg {
+      /* Optional: Adjust styles for small screens */
+    }
+
+    .contactlist, .visitus {
+      padding: 0.5rem;
+    }
+
+    .btn-primary {
+      padding: 0.5rem;
+    }
+
+    .visit img {
+      height: 120px; /* Adjust image height for small screens */
+    }
+
+    .text-center h4 {
+      text-align: center;
+    }
+  }
+</style>
+{% endblock %}

@@ -1,0 +1,275 @@
+{% extends 'master.html' %}
+{% load static %}
+
+{% block title %}
+Home Page
+{% endblock %}
+
+{% block content %}
+<section class="section">
+    <div class="container">
+        <div class="row">
+            <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12">
+                <div class="inbox aboutlogo">
+
+                <img src="{% static 'bed1.jpg' %}" alt="" >
+            </div>
+            </div>
+            <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12">
+                <div class="inbox text-center">
+                    <h2 class="abthead ">YOUR COMFORT IS OUR PRIORITY</h2>
+                    <span >EST 1998</span>
+                    <p class="abtpara"> Carsten K. Rath, a renowned entrepreneur, luxury travel expert, keynote speaker, and author, has been appointed as the brand ambassador of The Luxury Network Germany1. His impressive career in the Grand Hotellerie spans four continents, where he managed some of the world’s most spectacular hotels. Notable highlights include being the first Hotel Manager at the iconic Hotel Adlon, overseeing the Grande Roche in South Africa, the Kempinski Lufthansa Center in Beijing, and the Ritz-Carlton in Florida. Rath also founded his own brand, Kameha Hotels & Resorts</p>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Link Swiper's CSS -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+
+
+<style>
+  html,
+  body {
+    position: relative;
+    height: 100%;
+  }
+
+  body {
+    background:rgb(255, 255, 255);
+    /* font-family: Helvetica Neue, Helvetica, Arial, sans-serif; */
+    /* font-size: 14px; */
+    color: #000;
+    margin: 0;
+    padding: 0;
+  }
+
+  .swiper {
+    width: 100%;
+    height: 500px;
+  }
+
+  .swiper-slide {
+    text-align: center;
+    /* font-size: 18px; */
+    background: #fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .swiper-slide img {
+    display: block;
+    width: 100%;
+    height: 400px;
+    object-fit: cover;
+  }
+
+
+ 
+</style>
+</head>
+
+<body>
+<!-- Swiper -->
+<div class="swiper mySwiper">
+  <div class="swiper-wrapper">
+    <div class="swiper-slide">
+      <img src="{% static 'broom1.jpg' %}" alt="" width="100%">
+      <h4 class="p-2">Reading Room</h4>
+    </div>
+
+    <div class="swiper-slide"><img src="{% static 'dinner.jpg' %}" alt="" width="100%">
+      <h4 class="p-2">Candlelight Dinner</h4>
+    </div>
+    <div class="swiper-slide"><img src="{% static 'wine.jpg' %}" alt="" width="100%">
+      <h4 class="p-2"p>Bar</h4>
+    </div>
+    <div class="swiper-slide"><img src="{% static 'luxurybed.jpg' %}" alt="" width="100%">
+      <h4 class="p-2"p>Luxury bedroom</h4>
+    </div>
+    
+  </div>
+  <div class="swiper-pagination"></div>
+</div>
+
+<!-- Swiper JS -->
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+<!-- Initialize Swiper -->
+<script>
+  var swiper = new Swiper(".mySwiper", {
+    slidesPerView: 3,
+    spaceBetween: 30,
+    freeMode: true,
+    autoplay: {
+        delay: 3000, // Autoplay delay in milliseconds
+        disableOnInteraction: false, // Autoplay continues after user interactions
+      },
+    pagination: {
+      el: ".swiper-pagination",
+      clickable: true,
+    },
+    breakpoints: {
+        1200: {
+          slidesPerView: 3,
+        },
+        992: {
+          slidesPerView: 3,
+        },
+        576: {
+          slidesPerView: 2,
+        },
+        480:{
+          slidesPerView: 1,
+        },
+        350:{
+          slidesPerView: 1,
+        },
+        10:{
+          slidesPerView:1
+        }
+      },
+  });
+</script>
+</body>
+
+</html>
+
+  </script>
+  
+
+
+<section class="secondsectn">
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                <div class="inbox">
+                    <h2 class="">EXQUISITE SERVICE : WHERE YOU ARE OUR MOST VALLUED ASSET </h2>
+                    <br>
+                     <h3>Contact Front Desk:</h3>
+                    <h5> Information At Your Finger Tips</h5>
+                    <br>
+                    <h3>Call us: </h3>
+                    <h5>+198452365</h5>
+                </div>
+            </div>
+            <div class="col">
+                <div class="inbox colpara">
+                    <p>Especially in the best luxury hotels you’ll find that everything from the exterior, the reception, lounge and all other public areas will have a beautiful and fancy design. You may feel like you are somewhere special from the moment you walk through the door. The picture below was one of the bars and lounges at the impressive Hotel Imperial Vienna.Security tends to be very good at Luxury Hotels. Often with cameras and special card access to the rooms and even when using the elevator to your floor. In the room, there will likely be safe as well. Although you don’t always see them there is often security guards too.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<style>
+
+  .secondsectn {
+    padding: 2rem;
+  }
+
+  .secondsectn h2 {
+    font-size: 24px;
+  }
+
+  .secondsectn h3 {
+    font-size: 20px;
+  }
+
+  .secondsectn h5 {
+    font-size: 16px;
+  }
+
+  .secondsectn p {
+    font-size: 16px;
+  }
+
+  /* Media Queries for Responsiveness */
+
+  @media (max-width: 1200px) { /* Extra Large Screens (xl) */
+    .secondsectn {
+      padding: 1.5rem;
+    }
+
+    .secondsectn h2 {
+      font-size: 22px;
+    }
+
+    .secondsectn h3 {
+      font-size: 18px;
+    }
+
+    .secondsectn h5 {
+      font-size: 14px;
+    }
+
+    .secondsectn p {
+      font-size: 15px;
+    }
+  }
+
+  @media (max-width: 992px) { /* Large Screens (lg) */
+    .secondsectn {
+      padding: 1rem;
+    }
+
+    .secondsectn h2 {
+      font-size: 20px;
+    }
+
+    .secondsectn h3 {
+      font-size: 16px;
+    }
+
+    .secondsectn h5 {
+      font-size: 13px;
+    }
+
+    .secondsectn p {
+      font-size: 14px;
+    }
+  }
+
+  @media (max-width: 576px) { /* Small Screens (sm) */
+    .secondsectn {
+      padding: 1rem;
+    }
+
+    .secondsectn h2 {
+      font-size: 18px;
+      text-align: center;
+    }
+
+    .secondsectn h3 {
+      font-size: 14px;
+      text-align: center;
+    }
+
+    .secondsectn h5 {
+      font-size: 12px;
+      text-align: center;
+    }
+
+    .secondsectn p {
+      font-size: 12px;
+      text-align: center;
+    }
+
+    .row {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .col {
+      margin-bottom: 1rem;
+    }
+  }
+</style>
+
+
+{% endblock %}

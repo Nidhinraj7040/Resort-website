@@ -1,0 +1,92 @@
+{% extends 'master.html' %}
+{% load static %}
+
+{% block title %}
+Home Page
+{% endblock %}
+
+{% block content %}  
+
+<h2>Checkout</h2><br><br>
+<div class="container">
+    <div class="row">
+        <div class="col-sm-8">
+
+            {% for x in book %}
+            <div class="row " style="background-color: rgb(194, 235, 237); ">
+                <div class="col-sm-4 text-center">
+                    <div class="inbox">
+                        <img src="/media/{{ x.book_image}}" alt="appl" width="100%">
+
+                    </div>
+                </div>
+
+                <div class="col-sm-2 p-3">
+                    <div class="span1">
+                        <span> Type {{x.room_name}}</span>
+                    </div>
+                </div>
+                    <div class="col-sm-2 p-3">
+                    <div class="span1">
+                        <span>price  {{x.book_price}}</span>
+                    </div>
+                </div>
+                <div class="col-sm-2 p-3">
+                    <div class="span1">
+                        <span>Status: {{x.book_status}} </span>
+                    </div>
+                </div>
+               
+                <div class="col-sm-2 p-3">
+                    <div class="span1">
+                        <span>Total {{x.book_price}}</span>
+                    </div>
+                    <br>
+
+                </div>
+            </div>
+            {% endfor %}
+
+          </div>
+        
+    
+
+    <div class="col-sm-4">
+        <div style="background-color: rgb(219, 217, 241); min-height: 300px; padding: 15px;">
+        {% if co == 0 %}
+        {% for x in cart %}
+            <form action="/checkout/{{x.id}}" method="post">
+             {% csrf_token %}
+            <label for="">enter adress</label>
+            <textarea name="dlv_adrs" id="" style="width: 100%; height: 100px;"></textarea>
+
+            <label for="">choose payment type</label>
+            <select name="dlv_type" id="">
+                <option value="spot payment">COD</option>
+                <option value="online">Online</option>
+            </select>
+
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+        {% endfor %}
+
+        {% elif co == 1 %}
+        
+                Total Amount : {{tot}}
+                <br><br> 
+
+                GST : {{gst}}
+                <br><br>
+
+                Total : {{gtot}}
+                <br><br>
+
+        <a href="/bookconfirmation"><button class="btn btn-success">Confirm</button></a>
+
+        {% endif %}
+        </div>
+    </div>
+</div>
+</div>
+
+{% endblock %}
