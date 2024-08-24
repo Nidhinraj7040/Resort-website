@@ -1,0 +1,201 @@
+/* navbar */
+
+.logoname{
+    letter-spacing: 25px;
+}
+.toplink{
+    font-size: 17px;
+    font-weight: bold;
+    padding: 0px 10px !important;
+    
+}
+
+/* home page */
+
+.spend{
+    font-style: italic;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 40px;
+    text-align: justify;
+}
+
+/* ABOUT PAGE */
+
+.aboutlogo{
+    /* padding: 20px; */
+}
+
+.abthead{
+    font-size: 45px;
+    /* font-style: italic; */
+    font-family:Georgia, 'Times New Roman', Times, serif;
+}
+
+.section{
+    margin-top:40px;
+}
+span{
+    font-size: 30px;
+    font-weight:500px;
+    font-family:'Times New Roman', Times, serif;
+    
+}
+.abtpara{
+    font-size: large;
+    text-align: left;
+}
+
+.secondsectn{
+    margin-top: 40px;
+}
+
+.colpara{
+    font-size: large;
+}
+
+  .galleryimg{
+    height: 400px;
+    width: 100%;
+    padding: 30px 30px;
+    
+}
+
+/* BOOK RESORTS PAGE */
+
+.bookhead{
+    text-align: center;
+    padding: 30px 10px;
+}
+
+.brndname{
+    font-family:fantasy;
+    font-size: 30px;
+    font-weight:normal;
+}
+
+.skies{
+    text-align: center;
+    /* margin-top: 10px; */
+    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-size:25px;
+    transform: translateY(15px);
+}
+.dist{
+    text-align: right;
+    font-family:cursive;
+    color: rgb(99, 99, 199);
+    transform: translateY(-10px);
+}
+
+.resorttype{
+    text-align:center;
+    font-size:x-large;
+}
+.bookonline{
+    text-align:center; 
+    font-family:'Times New Roman', Times, serif;
+    text-decoration: none;
+    font-size: x-large;
+    color: red; 
+}
+    
+
+.rooms{
+    border-style: solid;
+    border-color: rgb(98, 111, 136);
+    border-width: 3px;
+    padding: 5px;
+    margin-bottom: 10px;
+    height:400px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items:center ;
+
+    /* border: 1px solid red; */
+
+}
+.rooms1{
+    border: 5px;
+    border-width: 2px;
+}
+
+/* CONTACT PAGE */
+.contactimg{
+    background-image: url(contactimg.jpg);
+    background-size: cover;
+    background-repeat: no-repeat; 
+    height: 700px;
+}
+
+.contactlist{
+    margin-left: 15%;
+}
+.visitus{
+    text-align: center;
+}
+
+/* SIGNUP */
+.signup{
+    border:2px solid rgb(0, 0, 0);
+    padding: 10px;
+    /* color: rgb(43, 80, 147); */
+}
+
+/* LOGIN PAGE */
+.login{
+    border:2px solid rgb(0, 0, 0);
+    padding: 15px;
+    margin: 20px;
+    
+    
+}
+
+/* CHECKOUT PAGE */
+
+.span1{
+    text-align: center;
+}
+.aboutlogo img{
+    width: 100%;
+}
+
+/* @media (max-width:992px) {
+    .aboutlogo img{
+        max-width: 50%;
+        margin: auto;
+    }
+} */
+ /* Dashboard navbar  */
+
+ /* .toplink{
+    text-align: center;
+    font-size: large;
+    padding: 10px;
+ } */
+
+ .adminlink {
+    color: #a6b2c0; /* Text color */
+    text-decoration: none; /* Remove underline */
+    font-weight: bold; /* Make text bold */
+    /* padding: 10px;  */
+    /* border-radius: 4px;  */
+    transition: background-color 0.3s, color 0.3s; /* Smooth transition for color changes */
+  }
+  
+  /* Hover State */
+  .adminlink:hover {
+    color: #c06d5b; /* Change color on hover */
+    background-color: #f0f0f0; /* Add background color on hover */
+    text-decoration: underline; /* Add underline on hover */
+  }
+  
+  /* Visited State */
+  .adminlink:visited {
+    /* color: #6c757d; Change color after link is visited */
+  }
+  
+  /* Active State */
+  .adminlink:active {
+    color: #28a745; /* Change color while link is being clicked */
+  }
